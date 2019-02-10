@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="style.css" rel="stylesheet"/>
+    <title>Валидация JS</title>
+</head>
+<body>
+<div class="b-form">
+    <form novalidate action="#" class="form">
+        <div class="form__field">
+            <input type="text" name="name" placeholder="Имя*" required/>
+            <span class="form__error">Это поле должно содержать хоть что-то</span>
+        </div>
+        <div class="form__field">
+            <input type="email" name="email" id="email" placeholder="E-Mail" required/>
+            <span class="form__error">Это поле должно содержать E-Mail в формате example@site.com</span>
+        </div>
+        <div class="form__field">
+            <input type="text" name="phone" placeholder="Телефон"
+                   pattern="[\+]\d{1}\s[\(]\d{3}[\)]\s\d{3}[\-]\d{2}[\-]\d{2}" minlength="18" maxlength="18" required/>
+            <span class="form__error">Это поле должно содержать телефон в формате +7 (123) 456-78-90</span>
+        </div>
+        <div class="form__field">
+            <input type="url" name="site" placeholder="Ваш сайт" required/>
+            <span class="form__error">Это поле должно содержать URL в формате http://mysite.ru</span>
+        </div>
+        <div class="form__field">
+            <input type="number" name="growth" placeholder="Ваш рост (см)" min="100" max="250" required/>
+            <span class="form__error">Ваш рост должен быть не меньше 100 и не больше 250 см</span>
+        </div>
+        <button id="btn">Отправить</button>
+    </form>
+
+
+</div>
+
+<script src="../dist/validation.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
