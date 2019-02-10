@@ -62,7 +62,10 @@ const validation = function ({ formSelector, setError, deleteError }) {
   fields.forEach(field => {
     field.addEventListener('blur', setValidate.bind(null, field));
   });
-  
+
+  return {
+    formValidate
+  }
 };
 
 export default validation;
